@@ -1,4 +1,3 @@
-## Part 1:
 Create a **Board** class with the following
 
 ### Properties
