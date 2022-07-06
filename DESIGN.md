@@ -11,7 +11,7 @@ Create a **Board** class with the following
 | cells         | CellState | Cell states that can be used in View |
 
 
-###Methods
+### Methods
 | Method Name   | Description                |
 | ------------- | -------------------------- |
 | generateCells | iterate throughout the size of the board NxN and generate empty cells  |
