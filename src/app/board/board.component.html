@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let cell of cells; let x = index">
+    <ul>
+      <li *ngFor="let c of cell let y = index" [ngClass]="{
+        'opened': c.state === CellState.Opened
+      }" (click)="openCell(x, y)">
+        {{c.hasMine === true ? 'B' : c.value}}
+      </li>
+    </ul>
+  </li>
+</ul>

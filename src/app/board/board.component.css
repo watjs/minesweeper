@@ -1,0 +1,18 @@
+ul {
+  list-style: none;
+}
+
+ul li ul li {
+  display: inline-block;
+  padding: 5px;
+  width: 20px;
+  position: relative;
+  user-select: none;
+}
+ul li ul li  span {
+  position: absolute;
+  font-size: 8px;
+}
+ul li ul li.opened {
+  background-color: red;
+}
