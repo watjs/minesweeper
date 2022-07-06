@@ -10,7 +10,7 @@ import ICell from '../models/cell';
 export class BoardComponent implements OnInit {
   @Input('width') public width!: number;
   @Input('height') public height!: number;
-  @Input('mines') public mines!: number;
+  @Input('bombsCount') public bombsCount!: number;
 
   public cells: ICell[][] = [];
   public CellState = CellState;
@@ -20,7 +20,7 @@ export class BoardComponent implements OnInit {
 
   public ngOnInit(): void {
     this.generateCells();
-    this.placeRandomMines();
+    this.placeRandomBombs();
     this.fillCellValue();
   }
 
@@ -84,13 +84,13 @@ export class BoardComponent implements OnInit {
     }
   }
 
-  private placeRandomMines(): void {
-    if (this.mines > this.width * this.height) {
-      throw new Error('Too much mines');
+  private placeRandomBombs(): void {
+    if (this.bombsCount > this.width * this.height) {
+      throw new Error('Too much bombs!!!');
     }
-    let minesToPlace = this.mines;
+    let bombsToPlace = this.bombsCount;
 
-    while (minesToPlace > 0) {
+    while (bombsToPlace > 0) {
       let randX = Math.floor(Math.random() * this.width);
       let randY = Math.floor(Math.random() * this.height);
 
@@ -99,7 +99,7 @@ export class BoardComponent implements OnInit {
       }
 
       this.cells[randX][randY].hasMine = true;
-      minesToPlace--;
+      bombsToPlace--;
     }
   }
 
